@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "thesis-forge: Markdown to Chinese thesis .docx with a format linter"
+message: "If you use this software, cite it as below."
+type: software
+authors:
+  - family-names: Xiao
+    given-names: Yilong
+    email: YilongXiao@users.noreply.github.com
+version: 0.1.0
+date-released: 2026-11-17
+license: MIT
+repository-code: "https://github.com/YilongXiao/thesis-forge"
+keywords:
+  - thesis
+  - docx
+  - markdown
+  - chinese
+  - typesetting
+abstract: "Build a GB/T-7713-informed thesis .docx from Markdown and lint its structure."

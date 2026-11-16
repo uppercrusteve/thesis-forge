@@ -1,0 +1,25 @@
+# thesis-forge 通用格式模板（示例）
+# 所有长度单位为 cm 或 pt。以本校研究生院模板为准逐项修改。
+# 覆盖方式：thesis-forge build thesis.md -o out.docx --template templates/thesis.yaml
+page_width_cm: 21.0
+page_height_cm: 29.7
+margin_top_cm: 2.54
+margin_bottom_cm: 2.54
+margin_left_cm: 3.0
+margin_right_cm: 2.5
+body_font_cn: "宋体"
+body_font_en: Times New Roman
+body_size_pt: 12.0
+line_spacing: 1.5
+first_line_indent_chars: 2.0
+heading_font: "黑体"
+heading_size_h1_pt: 18.0
+heading_size_h2_pt: 15.0
+heading_size_h3_pt: 13.0
+heading_space_before_pt: 12.0
+heading_space_after_pt: 6.0
+caption_size_pt: 10.5
+table_rule_pt: 1.5
+table_header_rule_pt: 0.75
+header_text_size_pt: 9.0
+page_number_size_pt: 10.5
