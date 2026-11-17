@@ -3,8 +3,7 @@ title: "thesis-forge: Markdown to Chinese thesis .docx with a format linter"
 message: "If you use this software, cite it as below."
 type: software
 authors:
-  - family-names: Xiao
-    given-names: Yilong
+  - name: "uppercrusteve"
     email: uppercrusteve@users.noreply.github.com
 version: 0.1.0
 date-released: 2026-11-17

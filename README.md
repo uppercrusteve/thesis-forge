@@ -122,7 +122,7 @@ pytest -q
 
 ```bibtex
 @software{xiao2026thesisforge,
-  author  = {Xiao, Yilong},
+  author  = {uppercrusteve},
   title   = {thesis-forge: Markdown to Chinese thesis .docx with a format linter},
   year    = {2026},
   version = {0.1.0},
@@ -137,4 +137,4 @@ thesis-forge turns Markdown thesis drafts into a `.docx` laid out to a generic C
 
 ## License
 
-MIT © 2026 Yilong Xiao. See [LICENSE](LICENSE).
+MIT © 2026 uppercrusteve. See [LICENSE](LICENSE).

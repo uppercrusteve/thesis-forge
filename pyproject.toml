@@ -9,7 +9,7 @@ description = "Build a Chinese university-style thesis .docx from Markdown, with
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "Yilong Xiao", email = "uppercrusteve@users.noreply.github.com" }]
+authors = [{ name = "uppercrusteve", email = "uppercrusteve@users.noreply.github.com" }]
 keywords = ["thesis", "docx", "markdown", "typesetting", "chinese"]
 classifiers = [
   "Development Status :: 4 - Beta",
