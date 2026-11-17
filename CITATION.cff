@@ -5,11 +5,11 @@ type: software
 authors:
   - family-names: Xiao
     given-names: Yilong
-    email: YilongXiao@users.noreply.github.com
+    email: uppercrusteve@users.noreply.github.com
 version: 0.1.0
 date-released: 2026-11-17
 license: MIT
-repository-code: "https://github.com/YilongXiao/thesis-forge"
+repository-code: "https://github.com/uppercrusteve/thesis-forge"
 keywords:
   - thesis
   - docx

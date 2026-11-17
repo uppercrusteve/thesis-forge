@@ -2,7 +2,7 @@
 
 把 Markdown 学位论文构建为通用中文高校格式的 .docx，并顺手做一次格式体检。
 
-[![CI](https://github.com/YilongXiao/thesis-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/YilongXiao/thesis-forge/actions/workflows/ci.yml)
+[![CI](https://github.com/uppercrusteve/thesis-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/uppercrusteve/thesis-forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-3776ab.svg)](pyproject.toml)
 
@@ -127,7 +127,7 @@ pytest -q
   year    = {2026},
   version = {0.1.0},
   license = {MIT},
-  url     = {https://github.com/YilongXiao/thesis-forge}
+  url     = {https://github.com/uppercrusteve/thesis-forge}
 }
 ```
 
