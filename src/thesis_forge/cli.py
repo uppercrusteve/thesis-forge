@@ -168,6 +168,9 @@ def main(argv: list[str] | None = None) -> int:
     except (FrontMatterError, TemplateError) as exc:
         print(f"错误: {exc}", file=sys.stderr)
         return 1
+    except UnicodeDecodeError:
+        print("错误: 输入文件不是 UTF-8 编码，请另存为 UTF-8 后重试", file=sys.stderr)
+        return 1
     except OSError as exc:
         print(f"错误: {exc}", file=sys.stderr)
         return 1

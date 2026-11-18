@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- Non-UTF-8 sources and templates exit with a readable hint instead of a
+  traceback.
+
 ## 0.1.0 — 2026-11-17
 
 Initial release.

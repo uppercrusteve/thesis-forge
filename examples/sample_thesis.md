@@ -1,6 +1,6 @@
 ---
 title: "高海拔葡萄园冠层光截获与果实成熟度的空间分异"
-author: "肖一龙"
+author: "uppercrusteve"
 institution: "示例大学 园艺学院"
 major: "果树学"
 advisor: "示例导师 教授"
