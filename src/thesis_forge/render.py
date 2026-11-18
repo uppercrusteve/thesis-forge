@@ -481,6 +481,49 @@ class _Renderer:
         spacer.paragraph_format.space_after = Pt(0)
 
 
+_TABLE_SEP_RE = re.compile(r"^\s*\|?\s*:?-{2,}:?\s*(?:\|\s*:?-{2,}:?\s*)+\|?\s*$")
+
+
+def _split_table_row(line: str) -> list[str]:
+    body = line.strip()
+    body = body[1:] if body.startswith("|") else body
+    body = body[:-1] if body.endswith("|") else body
+    return [cell.strip() for cell in re.split(r"(?<!\\)\|", body)]
+
+
+def _normalize_tables(body: str) -> str:
+    """Make every table row match the header's column count.
+
+    markdown-it drops cells past the header width, which loses data without a
+    word. Rows that are too long get their tail joined into the last cell;
+    short rows are padded so cells stay under the right heading.
+    """
+    lines = body.splitlines()
+    out: list[str] = []
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if (
+            index + 1 < len(lines)
+            and "|" in line
+            and _TABLE_SEP_RE.match(lines[index + 1])
+        ):
+            columns = len(_split_table_row(line))
+            out.extend([line, lines[index + 1]])
+            index += 2
+            while index < len(lines) and "|" in lines[index] and lines[index].strip():
+                cells = _split_table_row(lines[index])
+                if len(cells) > columns:
+                    cells = cells[: columns - 1] + [" ".join(cells[columns - 1 :])]
+                cells.extend([""] * (columns - len(cells)))
+                out.append("| " + " | ".join(cells) + " |")
+                index += 1
+            continue
+        out.append(line)
+        index += 1
+    return "\n".join(out)
+
+
 def _collect_tables(tokens) -> list[dict]:
     """Group table tokens into ``{"caption": str, "rows": [[...]], "header": bool}``."""
     tables: list[dict] = []
@@ -535,6 +578,7 @@ def build(
     template = template or Template()
     text = source.read_text(encoding="utf-8")
     front, body = parse_front_matter(text)
+    body = _normalize_tables(body)
     published = build_date or front.parsed_date
     if not front.date:
         front = replace(front, date=published.isoformat())

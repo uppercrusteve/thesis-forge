@@ -6,6 +6,8 @@
 
 - Non-UTF-8 sources and templates exit with a readable hint instead of a
   traceback.
+- Table rows with more cells than the header no longer lose the extra cells
+  (they are joined into the last column); short rows are padded.
 
 ## 0.1.0 — 2026-11-17
 

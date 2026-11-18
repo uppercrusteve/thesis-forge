@@ -219,3 +219,22 @@ def test_unknown_template_key_is_rejected(source: Path, tmp_path: Path):
         assert "magic" in str(exc)
     else:  # pragma: no cover
         raise AssertionError("TemplateError not raised")
+
+
+def test_ragged_table_keeps_extra_cells(tmp_path: Path):
+    source = tmp_path / "ragged.md"
+    source.write_text(
+        "---\ntitle: T\nauthor: A\ninstitution: I\nmajor: M\nadvisor: D\n"
+        "date: 2026-11-18\n---\n\n# 1 引言\n\n"
+        "表: 列数不一致\n\n| A | B | C |\n|---|---|---|\n| 1 | 2 |\n| 3 | 4 | 5 | 6 |\n",
+        encoding="utf-8",
+    )
+    output = tmp_path / "ragged.docx"
+    build(source, output)
+    document = Document(output)
+    table = document.tables[0]
+    assert len(table.columns) == 3
+    for row in table.rows:
+        assert len(row.cells) == 3
+    assert table.cell(2, 2).text == "5 6"
+    assert table.cell(1, 2).text == ""
