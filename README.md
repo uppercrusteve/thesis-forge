@@ -121,7 +121,7 @@ pytest -q
 ## 引用
 
 ```bibtex
-@software{xiao2026thesisforge,
+@software{uppercrusteve_thesis_forge_2026,
   author  = {uppercrusteve},
   title   = {thesis-forge: Markdown to Chinese thesis .docx with a format linter},
   year    = {2026},
