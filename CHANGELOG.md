@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased]
+## 0.1.0 — 2026-11-18
+
+Initial release.
 
 ### Fixed
 
@@ -8,10 +10,6 @@
   traceback.
 - Table rows with more cells than the header no longer lose the extra cells
   (they are joined into the last column); short rows are padded.
-
-## 0.1.0 — 2026-11-17
-
-Initial release.
 
 - `build`: Markdown + YAML front matter → A4 .docx with header, PAGE field, TOC field, Heading 1–3 outline levels, Song/Heiti typography, 2-character first-line indent, 1.5 line spacing, three-line tables, automatic figure/table captions, figure placeholders, hanging reference indent, and document properties.
 - `check`: heading numbering and level jumps, figure reference range, caption duplicates/gaps, reference duplicates and citation range, mixed punctuation, long paragraphs, empty headings and tables; table and `--json` output, exit code 1 on errors.
